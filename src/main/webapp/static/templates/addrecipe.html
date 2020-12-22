@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Venus: Sign-up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/static/css/aos.css">
+
+    <link rel="stylesheet" href="/static/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="/static/css/flaticon.css">
+    <link rel="stylesheet" href="/static/css/icomoon.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="goto-here">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Venus</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a th:href="@{/index}" class="nav-link">Home</a>
+                <li class="nav-item"><a th:href="@{/about}" class="nav-link">About</a></li>
+                <li class="nav-item"><a th:href="@{/signin}" method="get" class="nav-link">Log-in</a></li>
+                <li class="nav-item"><a th:href="@{/signup}" method="get" class="nav-link">Sign-up</a></li>
+                <li class="nav-item"><a th:href="@{/contact}" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
+<div class="hero-wrap hero-bread" style="background-image: url('/static/images/bg_10.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Tasty</a></span> <span>Delicious</span>
+                </p>
+                <h1 class="mb-0 bread">VENUS HOME</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 ftco-animate">
+                <script src="/static/js/addingredients.js" language="Javascript" type="text/javascript"></script>
+                <form th:object="${recipe}" th:action="@{'recipe/submit/'}" method="post" class="billing-form">
+                    <h3 class="mb-4 billing-heading">Add Recipe</h3>
+                    <div class="row align-items-end">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control" th:field="*{name}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Category">Category</label>
+                                <input type="text" class="form-control" th:field="*{category}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Servings">Servings</label>
+                                <input type="text" class="form-control" th:field="*{servings}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ingredients">Ingredient 1</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient1.name}">
+                                <label for = "quantity">Quantity</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient1.quantity}">
+                                <label for="ingredients">Ingredient 2</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient2.name}">
+                                <label for = "quantity">Quantity</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient2.quantity}">
+                                <label for="ingredients">Ingredient 3</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient3.name}">
+                                <label for = "quantity">Quantity</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient3.quantity}">
+                                <label for="ingredients">Ingredient 4</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient4.name}">
+                                <label for = "quantity">Quantity</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient4.quantity}">
+                                <label for="ingredients">Ingredient 5</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient5.name}">
+                                <label for = "quantity">Quantity</label>
+                                <input style="margin-top: 5px" type="text" class="form-control" th:field="${ingredient5.quantity}">
+
+                                <label for="Ingredients">Ingredient</label>
+
+                                <!--div id="dynamicInput">
+
+
+                                </--div>
+                            </div>
+                                <input type="button" style="margin-left: 1%" value="Add Another Ingredient" onClick="addInput('dynamicInput');"-->
+                            </div>
+                            <input type="button" style="margin-left: 1%" value="Add Another Ingredient"
+                                   onClick="addInput('dynamicInput');">
+                        </div>
+                    </div>
+                    <div id=tricky style="margin-right: 500px;">
+                        <div class="col-sm-3" style="margin-top: 15px">
+                            <button type="submit" class="btn btn-primary" name="action" value="save">Submit</button>
+                        </div>
+                        <div id="uploadbutton">
+                        <p>Submit Image</p>
+
+                        <form action="/action_page.php">
+                            <input type="file" id="myFile" name="filename">
+                            <input type="submit">
+                        </form>
+                        </div>
+                    </div>
+                </form> <!--ENd -->
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div> <!-- .col-md-8 -->
+    </div>
+    </div>
+</section> <!-- .section -->
+
+<footer class="ftco-footer ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="mouse">
+                <a href="#" class="mouse-icon">
+                    <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+                </a>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Venus</h2>
+                    <p>What's your desire?.</p>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/brunodemeloferreira/"><span
+                                class="icon-linkedin"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/crknunes/"><span
+                                class="icon-linkedin"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/vitorhrocha/"><span
+                                class="icon-linkedin"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/erica-fonseca-pereira/"><span
+                                class="icon-linkedin"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/joaommendonca1/"><span
+                                class="icon-linkedin"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-5">
+                    <h2 class="ftco-heading-2">Menu</h2>
+                    <ul class="list-unstyled">
+                        <li><a th:href="@{/about}" class="py-2 d-block">About</a></li>
+                        <li><a th:href="@{/signup}" class="py-2 d-block">Register</a></li>
+                        <li><a th:href="@{/signin}" class="py-2 d-block">Log-in</a></li>
+                        <li><a th:href="@{/contact}" class="py-2 d-block">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span
+                                    class="text">Parque de Exposições Aveiro</span></li>
+                            <li><span class="icon icon-phone"></span><span class="text">234 000000</span></li>
+                            <li><span class="icon icon-envelope"></span><span
+                                    class="text">venus@academiadecodigo.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | This template is made with <i class="icon-heart color-danger"
+                                                                        aria-hidden="true"></i> by <a target="_blank">Team
+                        Charlie</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.easing.1.3.js"></script>
+<script src="/static/js/jquery.waypoints.min.js"></script>
+<script src="/static/js/jquery.stellar.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/jquery.magnific-popup.min.js"></script>
+<script src="/static/js/aos.js"></script>
+<script src="/static/js/jquery.animateNumber.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/scrollax.min.js"></script>
+
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.easing.1.3.js"></script>
+<script src="/static/js/jquery.waypoints.min.js"></script>
+<script src="/static/js/jquery.stellar.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/jquery.magnific-popup.min.js"></script>
+<script src="/static/js/aos.js"></script>
+<script src="/static/js/jquery.animateNumber.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="/static/js/google-map.js"></script>
+<script src="/static/js/main.js"></script>
+<script>
+    $(document).ready(function(){
+        var quantitiy=0;
+        $('.quantity-right-plus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+            // If is not undefined
+            $('#quantity').val(quantity + 1);
+            // Increment
+        });
+        $('.quantity-left-minus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+            // If is not undefined
+            // Increment
+            if(quantity>0){
+                $('#quantity').val(quantity - 1);
+            }
+        });
+    });
+</script>
+</body>
+</html>
